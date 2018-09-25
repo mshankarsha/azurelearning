@@ -1,0 +1,70 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "uksouth"
+        },
+        "networkInterfaceName": {
+            "value": "table3mscorevm1555"
+        },
+        "networkSecurityGroupName": {
+            "value": "table3mscorevm1-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/0ab9ad2e-f316-4da5-b243-e7f65da24755/resourceGroups/table3mstuesrg/providers/Microsoft.Network/virtualNetworks/table3mstuesrg-vnet"
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "publicIpAddressName": {
+            "value": "table3mscorevm1-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "table3mscorevm1"
+        },
+        "virtualMachineRG": {
+            "value": "table3mstuesrg"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "adminUsername": {
+            "value": "azureops"
+        },
+        "adminPublicKey": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzHCAnuFewQ4jO5tnkr9Tg0pYOpO1YC6fyiTjJYB31RXvhbOijJu0N0h6tG2uYsZeisMT+UVcmoMs9pt5HEz+o+DxHULNOuXqSCfs0aMFSlI4slgW3Lf1jDDEaFirzwCCRQlcke4FYicQcJd9yGfCECAjRR12UgUxGJowF3OkGs1QXERnmEq/YwNyG/ZzEL5Hd6MiNDIYnVyFYCKvaDj6/Ei0LzcX6I/B9ea/n+PvxkVqhhQfiKrfYBTPhERIeTK8WshB4kwU1qaww1l/1SffrZRA3/R4soTawTX5FIs2q/TkHWJPS3Z1VDBk/peXdt9Sb4KTkhse29Bts4r/IXKF1"        },
+        "diagnosticsStorageAccountName": {
+            "value": "table3mstuesrgdiag"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/0ab9ad2e-f316-4da5-b243-e7f65da24755/resourceGroups/table3mstuesrg/providers/Microsoft.Storage/storageAccounts/table3mstuesrgdiag"
+        }
+    }
+}
